@@ -7,7 +7,14 @@ void main() => runApp(
       theme: ThemeData(
         primaryColor: Colors.white,
         textTheme: TextTheme(
-          title: TextStyle(fontFamily: 'Instagram', fontSize: 30.0)
+          title: TextStyle(
+              fontFamily: 'Instagram',
+              fontSize: 30.0
+          ),
+          subtitle: TextStyle(
+              fontFamily: 'Regular',
+            fontSize: 10.0
+          )
         )
       ),
     )
