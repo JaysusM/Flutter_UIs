@@ -44,16 +44,16 @@ class OwnStory extends StatelessWidget {
           ),
         ),
         Positioned(
-            bottom: 15.0,
-            right: -5.0,
+            bottom: 8.0,
+            right: -2.0,
             child: CircleAvatar(
               backgroundColor: Colors.white,
-              radius: 13.0,
+              radius: 11.0,
             )
         ),
         Positioned(
-          bottom: 4.0,
-          right: -16.0,
+          bottom: -4.5,
+          right: -14.5,
           child: IconButton(
               icon: Icon(Icons.add_circle, color: Colors.blue, size: 20.0),
               onPressed: () {}),
@@ -71,12 +71,13 @@ class OwnStory extends StatelessWidget {
 
 class Story extends StatelessWidget {
   static LinearGradient instagramCircle = LinearGradient(colors: <Color>[
-    Color(0xFF8A3AB9),
+    //Color(0xFF8A3AB9),
     Color(0xFF4C68D7),
+    Color(0xFFCD486B),
     Color(0xFFCD486B),
     Color(0xFFFBAD50),
   ], stops: [
-    0.1,
+    0.0,
     0.2,
     0.5,
     0.7

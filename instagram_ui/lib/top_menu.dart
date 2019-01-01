@@ -7,7 +7,7 @@ Widget TopMenuWidget(BuildContext context) {
       ),
       leading: IconButton(icon: Icon(Icons.camera_alt), onPressed: () {}),
       automaticallyImplyLeading: false,
-      elevation: 0.0,
+      elevation: 1.0,
       actions: <Widget>[
         Transform(
           child: IconButton(
@@ -18,12 +18,5 @@ Widget TopMenuWidget(BuildContext context) {
           alignment: FractionalOffset.center,
         )
       ],
-      bottom: PreferredSize(
-        child: Container(
-          height: 2.0,
-          width: MediaQuery.of(context).size.width,
-          color: Colors.grey.withOpacity(0.6),
-        ),
-      ),
     );
 }
