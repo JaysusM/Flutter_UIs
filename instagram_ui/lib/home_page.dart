@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'top_menu.dart';
 import 'stories.dart';
+import 'posts.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -10,7 +11,7 @@ class HomePage extends StatelessWidget {
         body: Column(children: <Widget>[
           Container(child: ScrollableStories(), height: 95.0),
           Expanded(
-            child: Container(),
+            child: PostList(),
             flex: 17,
           )
         ]),

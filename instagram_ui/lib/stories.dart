@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'user.dart';
 
 class ScrollableStories extends StatelessWidget {
   @override
@@ -6,15 +7,8 @@ class ScrollableStories extends StatelessWidget {
     return Container(
       child: ListView(
         children: <Widget>[
-          OwnStory("assets/rami_malek.jpg"),
-          Story("assets/lebron.jpg", "GOAT", true),
-          Story("assets/rami_malek.jpg", "Mr.Robot", true),
-          Story("assets/rami_malek.jpg", "RamiMalek", false),
-          Story("assets/rami_malek.jpg", "RamiMalek2", false),
-          Story("assets/rami_malek.jpg", "RamiMalek3", false),
-          Story("assets/rami_malek.jpg", "RamiMalek4", false),
-          Story("assets/rami_malek.jpg", "RamiMalek5", false)
-        ],
+          OwnStory.fromUser(User.LOGGED_USER)
+        ]..addAll(User.USER_FOLLOWINGS.map((user) => Story.fromUser(user)).toList()),
         scrollDirection: Axis.horizontal,
       ),
       margin: EdgeInsets.only(left: 3.0),
@@ -30,6 +24,8 @@ class OwnStory extends StatelessWidget {
   String _profileurl;
 
   OwnStory(this._profileurl);
+  OwnStory.fromUser(User u) :
+      this._profileurl = u.profilePic;
 
   @override
   Widget build(BuildContext context) {
@@ -86,6 +82,10 @@ class Story extends StatelessWidget {
   bool _unseenStory;
 
   Story(this._imgURL, this._username, this._unseenStory);
+  Story.fromUser(User u) :
+      this._imgURL = u.profilePic,
+      this._username = u.name,
+      this._unseenStory = u.unseenStory;
 
   @override
   Widget build(BuildContext context) {
