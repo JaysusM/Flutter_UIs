@@ -58,7 +58,7 @@ class ChatScreen extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .subtitle
-                        .copyWith(color: Colors.grey, fontSize: 13.0))
+                        .copyWith(color: Colors.grey, fontSize: 14.0))
               ])),
           decoration: BoxDecoration(
               border: Border(

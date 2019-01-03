@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'chat_screen.dart';
+import 'call_screen.dart';
 
 void main() => runApp(MainApp());
 
@@ -12,13 +13,25 @@ class MainApp extends StatefulWidget {
 class MainAppState extends State with SingleTickerProviderStateMixin {
 
   TabController _tabController;
+  final List<Widget> _floatingActionButtons = [
+    Container(),
+    FloatingActionButton(onPressed: null, child: Icon(Icons.message, color: Colors.white), backgroundColor: Colors.green),
+    FloatingActionButton(onPressed: null, child: Icon(Icons.center_focus_strong, color: Colors.white), backgroundColor: Colors.green),
+    FloatingActionButton(onPressed: null, child: Icon(Icons.add_call, color: Colors.white), backgroundColor: Colors.green)
+  ];
+
+  Widget _selectedFloatingActionButton;
 
   @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 4, vsync: this, initialIndex: 1);
+    _selectedFloatingActionButton = _floatingActionButtons[1];
     _tabController.addListener(() {
       //TODO Change to bold and grey to white when selected
+      this.setState(() {
+        _selectedFloatingActionButton = _floatingActionButtons[_tabController.index];
+      });
     });
   }
 
@@ -27,12 +40,13 @@ class MainAppState extends State with SingleTickerProviderStateMixin {
     return MaterialApp(
         theme: ThemeData(
             primaryColor: Colors.white,
-            accentColor: Color(0xFF128c7e),
+            accentColor: Color(0xFF075E54),
             textTheme: TextTheme(
                 title: TextStyle(
                     fontWeight: FontWeight.w600),
                 subtitle: TextStyle(fontWeight: FontWeight.w400))),
         home: Scaffold(
+          floatingActionButton: _selectedFloatingActionButton,
             appBar: AppBar(
               elevation: 0.0,
               title: Text("WhatsApp",
@@ -40,7 +54,7 @@ class MainAppState extends State with SingleTickerProviderStateMixin {
                       .textTheme
                       .title
                       .copyWith(color: Colors.white)),
-              backgroundColor: Color(0xFF128c7e),
+              backgroundColor: Color(0xFF075E54),
               bottom: TabBar(
                 controller: _tabController,
                   indicatorColor: Colors.white,
@@ -85,13 +99,13 @@ class MainAppState extends State with SingleTickerProviderStateMixin {
                   Container(
                     child: Text('Status'),
                   ),
-                  Container(
-                    child: Text('Calls'),
-                  )
+                  CallScreen()
                 ],
               ),
             ),
           ),
         );
   }
+  }
+
 }
