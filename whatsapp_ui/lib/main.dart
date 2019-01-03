@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 import 'chat_screen.dart';
 import 'call_screen.dart';
 import 'status_screen.dart';
+import 'camera_screen.dart';
+import 'package:camera/camera.dart';
 
-void main() => runApp(MainApp());
+List<CameraDescription> cameras;
+
+Future<void> main() async {
+  cameras = await availableCameras();
+  runApp(MainApp());
+}
 
 class MainApp extends StatefulWidget {
   @override
@@ -93,9 +100,7 @@ class MainAppState extends State with SingleTickerProviderStateMixin {
               child: TabBarView(
                 controller: _tabController,
                 children: <Widget>[
-                  Container(
-                    child: Text('Camera'),
-                  ),
+                  CameraScreen(cameras[0]),
                   ChatScreen(),
                   StatusScreen(),
                   CallScreen()

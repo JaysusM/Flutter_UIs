@@ -5,3 +5,6 @@ This is a project where I will upload all the UIs that I make with Flutter. Most
 | Instagram |
 | ------------------ |
 | <img src="./screenshots/instagram_ui.gif" height="400" alt="Instagram UI"/>  |
+| WhatsApp |
+| ------------------ |
+| <img src="./screenshots/whatsapp_ui.gif" height="400" alt="Whatsapp UI"/>  |
