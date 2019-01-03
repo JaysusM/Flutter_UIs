@@ -34,10 +34,21 @@ final List<String> dummyTime = [
 final List<int> dummyReadStatus = [
   1,
   0,
+  2,
+  2,
+  3,
   1,
-  2,
-  2,
-  1,
-  2,
-  2,
+  3,
+  3,
+];
+
+final List<int> dummyNumberOfUnreadMessage = [
+  0,
+  0,
+  0,
+  0,
+  3,
+  0,
+  0,
+  0,
 ];
