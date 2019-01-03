@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'chat_screen.dart';
 import 'call_screen.dart';
+import 'status_screen.dart';
 
 void main() => runApp(MainApp());
 
@@ -48,7 +49,7 @@ class MainAppState extends State with SingleTickerProviderStateMixin {
         home: Scaffold(
           floatingActionButton: _selectedFloatingActionButton,
             appBar: AppBar(
-              elevation: 0.0,
+              elevation: 2.0,
               title: Text("WhatsApp",
                   style: Theme.of(context)
                       .textTheme
@@ -96,16 +97,13 @@ class MainAppState extends State with SingleTickerProviderStateMixin {
                     child: Text('Camera'),
                   ),
                   ChatScreen(),
-                  Container(
-                    child: Text('Status'),
-                  ),
+                  StatusScreen(),
                   CallScreen()
                 ],
               ),
             ),
           ),
         );
-  }
   }
 
 }

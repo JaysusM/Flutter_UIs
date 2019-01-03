@@ -29,7 +29,7 @@ class CallScreen extends StatelessWidget {
               size: 15.0,
               color: (dummyCallAnswered[index]) ? Colors.green : Colors.red),
                 SizedBox(width: 3.0),
-                Text(dummyCallDates[index],
+                Text(dummyDates[index],
                     style: Theme.of(context)
                         .textTheme
                         .subtitle

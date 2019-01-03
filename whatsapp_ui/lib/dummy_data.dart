@@ -75,7 +75,7 @@ final List<bool> dummyCallAnswered = [
   false
 ];
 
-final List<String> dummyCallDates = [
+final List<String> dummyDates = [
   "3/1/19, 12:12PM",
   "1/1/19, 4:12PM",
   "31/12/18, 11:24AM",
