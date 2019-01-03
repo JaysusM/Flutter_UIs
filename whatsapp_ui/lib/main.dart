@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'chat_screen.dart';
 
 void main() => runApp(MainApp());
 
@@ -15,9 +16,9 @@ class MainAppState extends State with SingleTickerProviderStateMixin {
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 4, vsync: this);
+    _tabController = TabController(length: 4, vsync: this, initialIndex: 1);
     _tabController.addListener(() {
-      //Change to bold and grey to white when selected
+      //TODO Change to bold and grey to white when selected
     });
   }
 
@@ -29,12 +30,12 @@ class MainAppState extends State with SingleTickerProviderStateMixin {
             accentColor: Color(0xFF128c7e),
             textTheme: TextTheme(
                 title: TextStyle(
-                    fontFamily: 'Instagram', fontWeight: FontWeight.w700),
-                subtitle: TextStyle(fontFamily: 'Instagram'))),
+                    fontWeight: FontWeight.w600),
+                subtitle: TextStyle(fontWeight: FontWeight.w400))),
         home: Scaffold(
             appBar: AppBar(
               elevation: 0.0,
-              title: Text("Whatsapp",
+              title: Text("WhatsApp",
                   style: Theme.of(context)
                       .textTheme
                       .title
@@ -80,9 +81,7 @@ class MainAppState extends State with SingleTickerProviderStateMixin {
                   Container(
                     child: Text('Camera'),
                   ),
-                  Container(
-                    child: Text('Chat'),
-                  ),
+                  ChatScreen(),
                   Container(
                     child: Text('Status'),
                   ),
