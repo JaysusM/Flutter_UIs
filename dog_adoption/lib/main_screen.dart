@@ -3,11 +3,12 @@ import 'adopter_profile.dart';
 import 'user.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
 import 'category_selector.dart';
+import 'puppy_gallery.dart';
 
-class SearchScreen extends StatelessWidget {
+class MainScreen extends StatelessWidget {
   User _loggedUser;
 
-  SearchScreen(this._loggedUser);
+  MainScreen(this._loggedUser);
 
   @override
   Widget build(BuildContext context) {
@@ -32,12 +33,18 @@ class SearchScreen extends StatelessWidget {
             width: MediaQuery.of(context).size.width,
             color: Colors.grey.withOpacity(0.1),
           ),
-          Container(height: 30.0),
+          Container(height: 15.0),
           Container(
             height: 65.0,
             child: CategorySelector(["Cats", "Dogs", "Birds", "Other"]),
             margin: EdgeInsets.symmetric(vertical: 10.0),
             padding: EdgeInsets.only(left: 15.0),
+          ),
+          Container(height: 15.0),
+          Expanded(
+            child: Container(child: PuppyGallery(),
+            margin: EdgeInsets.only(left: 40.0),
+            ),
           )
         ],
       ),

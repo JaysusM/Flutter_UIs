@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'search_screen.dart';
+import 'main_screen.dart';
 import 'user.dart';
 
 void main() => runApp(MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'OpenSans'
       ),
       home: Material(
-          child: SearchScreen(new User("assets/avatar_1.jpg", "JaysusM"))
+          child: MainScreen(new User("assets/avatar_1.jpg", "JaysusM"))
       ),
     );
   }

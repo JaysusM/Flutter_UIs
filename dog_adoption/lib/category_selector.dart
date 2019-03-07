@@ -14,9 +14,13 @@ class CategorySelector extends StatefulWidget {
 
 class CategorySelectorState extends State<CategorySelector> {
 
-  String _selected = null;
+  String _selected;
 
-
+  @override
+  void initState() {
+    _selected = "Dogs";
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
