@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'adopter_profile.dart';
 import 'user.dart';
 import 'package:outline_material_icons/outline_material_icons.dart';
+import 'category_selector.dart';
 
 class SearchScreen extends StatelessWidget {
   User _loggedUser;
@@ -30,6 +31,13 @@ class SearchScreen extends StatelessWidget {
             height: 2.0,
             width: MediaQuery.of(context).size.width,
             color: Colors.grey.withOpacity(0.1),
+          ),
+          Container(height: 30.0),
+          Container(
+            height: 65.0,
+            child: CategorySelector(["Cats", "Dogs", "Birds", "Other"]),
+            margin: EdgeInsets.symmetric(vertical: 10.0),
+            padding: EdgeInsets.only(left: 15.0),
           )
         ],
       ),
