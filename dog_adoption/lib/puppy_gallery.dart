@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'puppy.dart';
+import 'puppy_info_page.dart';
 
 class PuppyGallery extends StatelessWidget {
   static List<Puppy> _puppies = [
@@ -41,33 +42,39 @@ class PuppyViewState extends State<PuppyView> {
             left: 0.0,
             top: 0.0,
             child: Container(
-                child: ClipRRect(
-                  child: Image.asset(widget._puppy.imageURL, fit: BoxFit.fitWidth),
+                child: GestureDetector(child: ClipRRect(
+                  child: Hero(child: Image.asset(widget._puppy.imageURL, fit: BoxFit.fitWidth), tag: widget._puppy.name),
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(25.0),
                     bottomLeft: Radius.circular(25.0)
                   ),
                 ),
-            height: 170.0,
-              width: MediaQuery.of(context).size.width,
-            ),
-          ),
-          Positioned(
-            child: Text(widget._puppy.name,
-                style: TextStyle(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => PuppyInfoPage(widget._puppy)));
+                  },
+                    ),
+                    height: 170.0,
+                    width: MediaQuery.of(context).size.width,
+                    )
+                    ),
+                    Positioned(
+                    child: Text(widget._puppy.name,
+                    style: TextStyle(
                     fontSize: 17.0,
                     color: Colors.black,
                     fontWeight: FontWeight.w700)),
-            left: 0.0,
-            top: 185.0,
-          ),
-          Positioned(
-            child: IconButton(
-                icon: Icon((liked) ? Icons.favorite : Icons.favorite_border,
+                    left: 0.0,
+                    top: 185.0,
+                    ),
+                    Positioned(
+                    child: IconButton(
+                    icon: Icon(
+                        (liked) ? Icons.favorite : Icons.favorite_border,
                     color: Colors.red, size: 25.0),
                 onPressed: () {
                   this.setState(() {
                     this.liked = !this.liked;
+                    widget._puppy.liked = this.liked;
                   });
                 }),
             right: 30.0,
