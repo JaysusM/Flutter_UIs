@@ -15,23 +15,23 @@ class CategorySelector extends StatefulWidget {
 class CategorySelectorState extends State<CategorySelector> {
   String _selected;
   static List<Animal> _puppies = [
-    new Animal("Puppy Katherin", "French vanilla puppy", "assets/puppy_1.jpg"),
-    new Animal("Puppy Luna", "Good boi", "assets/puppy_2.jpg"),
+    new Animal("Puppy Katherin", "French vanilla puppy", "assets/puppy_1.jpg", "1", "Female", "Vanilla", "0.5m", "1kg"),
+    new Animal("Puppy Luna", "Good boi", "assets/puppy_2.jpg", "2", "Male", "Vanilla", "0.3m", "1kg"),
     new Animal(
-        "Puppy Katherin 2", "French vanilla puppy", "assets/puppy_1.jpg"),
-    new Animal("Puppy Luna 2", "Good boi", "assets/puppy_2.jpg"),
+        "Puppy Katherin 2", "French vanilla puppy", "assets/puppy_1.jpg", "0", "Female", "White", "0.25m", "1kg"),
+    new Animal("Puppy Luna 2", "Good boi", "assets/puppy_2.jpg", "3", "Male", "Black", "0.5m", "1kg"),
     new Animal(
-        "Puppy Katherin 3", "French vanilla puppy", "assets/puppy_1.jpg"),
-    new Animal("Puppy Luna 3", "Good boi", "assets/puppy_2.jpg")
+        "Puppy Katherin 3", "French vanilla puppy", "assets/puppy_1.jpg", "1", "Female", "Vanilla", "0.5m", "1kg"),
+    new Animal("Puppy Luna 3", "Good boi", "assets/puppy_2.jpg", "2", "Male", "Vanilla", "0.5m", "1kg"),
   ];
 
   static List<Animal> _kittens = [
-    new Animal("Kitten Martha", "Unknown breed", "assets/kitten_1.jpeg"),
-    new Animal("Kitten Santa", "Good girl", "assets/kitten_2.jpeg"),
-    new Animal("Kitten Martha 2", "Unknown breed", "assets/kitten_1.jpeg"),
-    new Animal("Kitten Santa 2", "Good girl", "assets/kitten_2.jpeg"),
-    new Animal("Kitten Martha 3", "Unknown breed", "assets/kitten_1.jpeg"),
-    new Animal("Kitten Santa 3", "Good girl", "assets/kitten_2.jpeg")
+    new Animal("Kitten Martha", "Unknown breed", "assets/kitten_1.jpeg", "1", "Female", "Black", "0.5m", "1kg"),
+    new Animal("Kitten Santa", "Good girl", "assets/kitten_2.jpeg", "3", "Male", "Brown", "0.5m", "1kg"),
+    new Animal("Kitten Martha 2", "Unknown breed", "assets/kitten_1.jpeg", "2", "Male", "Vanilla", "0.5m", "1kg"),
+    new Animal("Kitten Santa 2", "Good girl", "assets/kitten_2.jpeg", "1", "Female", "Vanilla", "0.5m", "1kg"),
+    new Animal("Kitten Martha 3", "Unknown breed", "assets/kitten_1.jpeg", "3", "Female", "Vanilla", "0.5m", "1kg"),
+    new Animal("Kitten Santa 3", "Good girl", "assets/kitten_2.jpeg", "1", "Female", "Vanilla", "0.5m", "1kg"),
   ];
 
   @override
