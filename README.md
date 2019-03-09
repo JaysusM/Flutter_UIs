@@ -9,4 +9,4 @@ This is a project where I will upload all the UIs that I make with Flutter. Most
 | Animal adoption |
 | - |
 | [Dribbble design](https://dribbble.com/shots/5965512-Pets-Adoption)<br>Creator: [Anton Mikhaltsov](https://dribbble.com/mikhaltsov23) |
-| ![Animal adoption app](https://j.gifs.com/NL9BXv.gif)|
+|<img src="./screenshots/adoption.gif" height="400" alt="Animal Adoption UI"/> |
