@@ -1,9 +1,9 @@
-class Puppy {
+class Animal {
 
   String _imageURL, _name, _breed;
   bool _liked;
 
-  Puppy(this._name, this._breed, this._imageURL)
+  Animal(this._name, this._breed, this._imageURL)
     : _liked = false;
 
   get breed => _breed;

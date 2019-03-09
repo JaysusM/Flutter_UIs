@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'puppy.dart';
+import 'animal.dart';
 
-class PuppyInfoPage extends StatefulWidget {
-  final Puppy _puppy;
+class AnimalInfoPage extends StatefulWidget {
+  final Animal _animal;
 
-  PuppyInfoPage(this._puppy);
+  AnimalInfoPage(this._animal);
 
   @override
-  State<StatefulWidget> createState() => PuppyInfoPageState();
+  State<StatefulWidget> createState() => AnimalInfoPageState();
 }
 
-class PuppyInfoPageState extends State<PuppyInfoPage> {
+class AnimalInfoPageState extends State<AnimalInfoPage> {
   ScrollController _scrollController;
   bool _isScrolling;
 
@@ -53,8 +53,8 @@ class PuppyInfoPageState extends State<PuppyInfoPage> {
                     Expanded(
                       flex: 7,
                       child: Hero(
-                          tag: widget._puppy.name,
-                          child: Image.asset(widget._puppy.imageURL,
+                          tag: widget._animal.name,
+                          child: Image.asset(widget._animal.imageURL,
                               fit: BoxFit.cover)),
                     ),
                     Expanded(
@@ -65,7 +65,7 @@ class PuppyInfoPageState extends State<PuppyInfoPage> {
                           children: <Widget>[
                             Positioned(
                               child: Center(
-                                  child: Text(widget._puppy.breed,
+                                  child: Text(widget._animal.breed,
                                       style: TextStyle(
                                           color: Colors.grey,
                                           fontSize: 17.0,
@@ -74,7 +74,7 @@ class PuppyInfoPageState extends State<PuppyInfoPage> {
                               left: 26.0,
                             ),
                             Positioned(
-                              child: Text(widget._puppy.name,
+                              child: Text(widget._animal.name,
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontSize: 27.0,
@@ -85,7 +85,7 @@ class PuppyInfoPageState extends State<PuppyInfoPage> {
                             Positioned(
                               child: IconButton(
                                 icon: Icon(
-                                  (widget._puppy.liked)
+                                  (widget._animal.liked)
                                       ? Icons.favorite
                                       : Icons.favorite_border,
                                   color: Colors.red,
@@ -93,7 +93,7 @@ class PuppyInfoPageState extends State<PuppyInfoPage> {
                                 ),
                                 onPressed: () {
                                   this.setState(() {
-                                    widget._puppy.liked = !widget._puppy.liked;
+                                    widget._animal.liked = !widget._animal.liked;
                                   });
                                 },
                               ),
@@ -107,7 +107,7 @@ class PuppyInfoPageState extends State<PuppyInfoPage> {
                   ],
                 ),
                 collapseMode: CollapseMode.pin,
-                title: Text(widget._puppy.name,
+                title: Text(widget._animal.name,
                     style: TextStyle(
                         color:
                             (_isScrolling) ? Colors.white : Colors.transparent,
