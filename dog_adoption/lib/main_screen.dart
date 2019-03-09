@@ -16,6 +16,7 @@ class MainScreen extends StatelessWidget {
         child: NestedScrollView(
       headerSliverBuilder: (context, _) => <Widget>[
         SliverAppBar(
+          leading: Container(),
           expandedHeight: 207.0,
           backgroundColor: Colors.transparent,
           flexibleSpace: FlexibleSpaceBar(

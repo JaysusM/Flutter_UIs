@@ -34,10 +34,8 @@ class AnimalInfoPageState extends State<AnimalInfoPage> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        theme: ThemeData(fontFamily: 'OpenSans'),
-        home: Material(
-            child: NestedScrollView(
+    return Scaffold(
+             body: NestedScrollView(
           controller: _scrollController,
           headerSliverBuilder: (context, _) => <Widget>[
                 SliverAppBar(
@@ -55,11 +53,13 @@ class AnimalInfoPageState extends State<AnimalInfoPage> {
                     background: Column(
                       children: <Widget>[
                         Expanded(
-                          flex: 6,
-                          child: Hero(
+                          flex: 7,
+                          child: Container(child: Hero(
                               tag: widget._animal.name,
                               child: Image.asset(widget._animal.imageURL,
-                                  fit: BoxFit.cover)),
+                                  fit: BoxFit.fitWidth)),
+                          color: Colors.white,
+                          ),
                         ),
                         Expanded(
                           flex: 3,
@@ -153,7 +153,9 @@ class AnimalInfoPageState extends State<AnimalInfoPage> {
             ),
             Positioned(child: _adoptionWidget(), bottom: 0.0, left: 0.0)
           ]),
-        )));
+        ),
+        backgroundColor: Colors.white,
+        );
   }
 
   Widget _categoryButton(String attributeName, String valueName) {
