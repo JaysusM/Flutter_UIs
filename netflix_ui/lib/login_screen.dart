@@ -58,7 +58,7 @@ class ProfileCard extends StatelessWidget {
   String _logo;
   bool _addProfile;
   double _width;
-  final double _nameSize = 11.0;
+  final double _nameSize = 12.0;
 
   ProfileCard(this._name, this._logo, double screenWidth)
       :
